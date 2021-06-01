@@ -1,0 +1,87 @@
+#
+# This will allow easy configuration of Probot for other teams
+#
+
+# Team name for the bot to reference your team as for comments to customers.
+TEAMNAME: 'MCM'
+
+#Envornment, test or prod
+ENVIRON: 'prod'
+
+# Should we interact with, and sync with ServiceNow (true or false)? Default is false if not specified.
+SNOWSYNC: false
+
+# Incident Queue to sync
+INCIDENTQUEUE: 
+- 'QUEUE-1'
+- 'QUEUE-2'
+
+# ServiceNow Queues, meaningless if SNOWSYNC is 0
+SNOWQ: 
+- 'QUEUE-1'
+- 'QUEUE-2'
+- 'QUEUE-3'
+# Should the bot open Service Now Tasks for Github issues if SNOWSYNC is true? (default is true if not specified)
+# for tasks to be open SNOWSYNC must be true also!
+CREATETASK: false
+
+# assign to an ID at creation? 'None' for no
+ASSIGNTO: 'None'
+
+# Github Project boards enabled. Default is false if not specified.
+PROJECTENABLE: false
+
+#If Github project boards are enabled what board should new cards go to? These must be org level boards.
+PROJECTBOARDNAME: "My Github Project Board"
+
+#Lastly if Github project boards are enabled to with Column should new cards go.
+PROJECTCOLUMN: 'To Do'
+
+# Epic title to use on Epic cards? This is ignored if JIRATYPE is not Epic. Uncomment if needed.
+EPICTITLE: 'HaloProbot-GithubCards'
+
+# Jira Record of truth - Jira is the main driver for all issues and ServiceNow interactions. Default is false if not specified.
+JIRAROT: false
+
+# When an issue is assigned what state (transition) should the Jira card be moved to
+# for example 'in analysis'. None will make the bot leave it alone. 
+# If not specified the default is 'in development'
+JIRAASSIGNTRANSITION: None
+
+# Jira card type, Story, Task and Epic are supported
+JIRATYPE: Epic
+
+# Type of Jira cards to open. If SEARCHPROJECT is set to true you can specify 'test to find -- project to assign to. For instance:
+# 
+# The project is the test before the '-' in your JIRA card number
+# PROJECTNAME:
+# - 'test -- MYTESTPROJECT'
+# - 'this is for dev -- MYDEVPROJECT'
+# 
+# etc.
+PROJECTNAME: 'MCM'
+
+# Enable dynamic search for assigning to a project in Jira. Default is false if not specified.
+SEARCHPROJECT: false
+
+# If SEARCHPROJECT is set to true define the default project the bot should assign
+# cards to if it can't find the specified text.
+DEFAULTPROJECT: MYPROJECT
+
+# If we want to link all Jira cards from this repo to a specific one (like an Epic) provide the 
+# card number below (and uncomment)
+#JIRALINK: MYEPICCARDNUMBER
+
+# Search Answerhub for an answer to any issues when opened? Default is false if not specified.
+SEARCHANSWERHUB: false
+
+# Number of answerhub results
+ANSWERHUBMAX: 5
+
+# Insert Survey into github issue for customer? Default is false if not specified.
+SURVEY: false
+# Link for Survey
+SURVEYURL: 'https://fancy.nwie.net/cloudinfrastructuresolutionssurvey'
+
+# Debugging
+DEBUG: false
